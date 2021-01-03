@@ -7,6 +7,16 @@ var birthday = new Date('1994-09-07');
 var age = Math.abs(new Date((Date.now() - birthday.getTime())).getUTCFullYear() - 1970);
 $("#age-info").text(age);
 
+var d = new Date();
+var n = d.getFullYear();
+
+$("#footeryear").text(n);
+
+
+$(".nav-trigger").on("click", function(){
+  $('.navbar').collapse("toggle");
+});
+
 var profiltypewriter = new Typewriter("#profil-typewriter", {
     cursor: "_",
     delay: 30
@@ -57,7 +67,7 @@ $(document).scroll(function() {
     $(".nav").children(".active").removeClass("active");
     $(".nav").children(".nav-link").eq(2).addClass("active");
     if($("#skills-typewriter").children(".Typewriter__wrapper").text() == ""){
-      skillstypewriter.typeString('Technische Fähigkeiten.').start();
+      skillstypewriter.typeString('Technische und berufliche Fähigkeiten.').start();
     }
     currentScrollElement = "skills";
     }
@@ -82,7 +92,7 @@ $(document).scroll(function() {
   }
   if(y <= 400){
     $('.header-text').css('font-size',"3.5rem");
-    $('.header-fixed').css('background-color',"rgba(69, 103, 255, 0)");
+    $('.header-fixed').css('background-color',"rgba(47, 84, 162, 0)");
     $('.header-addition').fadeIn(100);
     $('.navbar').removeClass("fixed");
   }
@@ -94,15 +104,63 @@ $(document).scroll(function() {
     var size = 2.5 + ((465-y)/65);
     $('.header-text').css('font-size',size + "rem");
     var opacity = 1 - (465-y)/65;
-    $('.header-fixed').css('background-color',"rgba(69, 103, 255," + opacity + ")");
+    $('.header-fixed').css('background-color',"rgba(47, 84, 162," + opacity + ")");
   }
   if(y > 465){
     $('.header-addition').fadeOut(100);
     $('.header-text').css('font-size',"2.5rem");
-    $('.header-fixed').css('background-color',"rgba(69, 103, 255, 1)");
+    $('.header-fixed').css('background-color',"rgba(47, 84, 162, 1)");
     $('.header-fixed').addClass("fixed");
   }
   else{
     $('.header-fixed').removeClass("fixed");
   }
+});
+
+$(".project-tag").on("click", function(){
+  $(".search-input").val($(this).text());
+  $(".search-input").trigger("keyup");
+});
+
+$(".input-group-text").on("click", function(){
+  $(".search-input").val("");
+  $(".search-input").focus();
+  $(".input-group-text").addClass("hidden");
+  $(".search-input").trigger("keyup");
+});
+
+
+$(".search-input").on("keyup", () => {
+  var val = $(".search-input").val();
+  if (val != ""){
+    $(".input-group-text").removeClass("hidden");
+  }
+  else{
+    $(".input-group-text").addClass("hidden");
+  }
+  $(".project-div").each((i,element)=>{
+    if($(element).children("h4, p, .project-tag").text().toLowerCase().includes(val.toLowerCase())){
+      $(element).removeClass("hidden");
+      $(element).children(".project-tag").each((j,tag)=>{
+        if($(tag).text().toLowerCase() == val.toLowerCase()){
+          $(tag).addClass("active-tag");
+        }
+        else{
+          $(tag).removeClass("active-tag");
+        }
+      });
+    }
+    else{
+      $(element).addClass("hidden");
+    }
+  });
+
+  $(".project-year").each((i, year) => {
+    if(!$(year).children(".project-div:not('.hidden')").length){
+      $(year).children(".time-divider").addClass("hidden");
+    }
+    else{
+      $(year).children(".time-divider").removeClass("hidden");
+    }
+  });
 });

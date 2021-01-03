@@ -1,0 +1,174 @@
+/*
+ * Globals
+ */
+
+body{
+  font-size:1.1rem;
+}
+
+ /* belgrano-regular - latin */
+ @font-face {
+   font-family: 'Belgrano';
+   font-style: normal;
+   font-weight: 400;
+   src: local(''),
+        url('../dist/belgrano-v11-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../dist/belgrano-v11-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+ }
+
+h1,h2,h3,h4{
+  font-family: "Belgrano";
+}
+
+h4,h5{
+  color: #2A304A;
+  font-weight: bold;
+}
+
+h3{
+  color:#4567FF;
+}
+
+ul{
+  padding-left:unset;
+  list-style-type: none;
+}
+
+.hidden{
+  display:none;
+}
+
+.navbar{
+  z-index:1000;
+  position:absolute;
+  background-color:#2A304A;
+}
+
+.skill-col{
+  padding: 15px;
+  margin:unset;
+}
+.skill-rating{
+  float:right;
+}
+
+.time-divider {
+   width: 100%;
+   text-align: center;
+   border-bottom: 1px solid #aaa;
+   line-height: 0.1em;
+   margin: 10px 0 35px;
+}
+
+.time-divider span {
+    background:#f5f1e3;
+    padding:0 15px;
+}
+
+.project-div{
+  text-align: justify;
+  margin-bottom:30px;
+  margin-top:10px;
+}
+
+.highlight{
+    font-weight: 600;
+    color:#2A304A;
+}
+
+.project-div img{
+  width:40%;
+  margin-right:30px;
+  float:left;
+}
+
+li.borderli{
+  margin-top:15px;
+  border-top:2px solid #2a304a2e;
+}
+
+li.borderli:first-child{
+  margin-top:unset;
+  border-top:unset;
+}
+
+#profil,#lebenslauf{
+  padding-bottom:15px;
+  margin-bottom:15px;
+  border-bottom: 25px solid #4567FF;
+}
+
+.privat{
+  font-size:1.1rem;
+  color: #aaa;
+  font-style: italic;
+}
+
+main{
+  margin: 0 50px;
+}
+
+.row{
+  --bs-gutter-x:unset;
+}
+
+#header{
+  width:100%;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+.headerrow4{
+  padding-top:50px;
+  padding-bottom:50px;
+  padding-left:30px;
+  padding-right:30px;
+  background-color:#2a304a;
+}
+
+.headerrow8{
+  padding-top:50px;
+  padding-left:30px;
+  padding-right:30px;
+  height:200px;
+  background-color: #4567FF;
+}
+
+.header-text{
+  margin-top:-10px;
+  font-size: 3rem;
+  border-bottom:1px solid #fff;
+}
+
+.header-addition{
+  font-size: 2rem;
+}
+
+#lebenslauf .row{
+  border-top:2px solid #2a304a2e;
+}
+
+#lebenslauf .row:first-child{
+  border-top:unset;
+}
+
+.profile-picture{
+  width:100%;
+  margin-bottom:20px;
+}
+
+.background-wrapper{
+  margin: 25px;
+  color:#000;
+}
+
+html,
+body {
+  background-color: #fff;
+  position:relative;
+}
+
+footer{
+  height:600px;
+  background-color: #2A304A;
+}
