@@ -25,12 +25,10 @@ var lebenslauftypewriter = new Typewriter("#lebenslauf-typewriter", {
     cursor: "_",
     delay: 30
 });
-
 var skillstypewriter = new Typewriter("#skills-typewriter", {
     cursor: "_",
     delay: 30
 });
-
 var projekttypewriter = new Typewriter("#projekt-typewriter", {
     cursor: "_",
     delay: 30
