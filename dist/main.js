@@ -15,11 +15,10 @@ $("#footeryear").text(n);
 $(document).on("click", function(e)
 {
     var container = $(".nav-trigger");
-
     // if the target of the click isn't the container nor a descendant of the container
-    if (!container.is(e.target) && container.has(e.target).length === 0)
+    if (!$(".nav-trigger:hidden").length && !container.is(e.target) && container.has(e.target).length === 0)
     {
-        $('.navbar').collapse("toggle");
+        $('.navbar').collapse("hide");
     }
 });
 
